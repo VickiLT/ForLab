@@ -1,0 +1,17 @@
+
+
+nav{
+
+}
+
+.homeContent{
+    border: 1px solid #e1b2b2;
+    min-height: 100%;
+}
+a{
+    color: #000;
+}
+.nav>li>a:hover{
+    color: #fff;
+    background-color: #337ab7;
+}

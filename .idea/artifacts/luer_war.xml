@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="luer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="luer.war">
+      <element id="artifact" artifact-name="luer:war exploded" />
+    </root>
+  </artifact>
+</component>
