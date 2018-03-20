@@ -41,11 +41,11 @@
         <div class="row" style="margin-top: 100px">
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked" id="homepageNav">
-                    <li role="presentation" v-for="item in items" @click="selectNav()" :class='isSelect === item.title ? "active homeNav" : "homeNav"'><a :href=item.url>{{item.title}}</a></li>
+                    <li role="presentation" v-for="item in items" @click="selectNav(item.title,$event)" :class='isSelect === item.title ? "active homeNav" : "homeNav"':data-url="item.url"><a>{{item.title}}</a></li>
                 </ul>
             </div>
             <div class="col-md-9 homeContent">
-                <h2>Hello World!</h2>
+                <iframe src="/luer/jsp/indexContent.jsp" ></iframe>
             </div>
         </div>
     </div>
