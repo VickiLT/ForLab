@@ -40,15 +40,41 @@
         </nav>
         <div class="row" style="margin-top: 100px">
             <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked" id="homepageNav">
-                    <li role="presentation" v-for="item in items" @click="selectNav(item.title,$event)" :class='isSelect === item.title ? "active homeNav" : "homeNav"':data-url="item.url"><a>{{item.title}}</a></li>
+                <ul id="homepageNav" class="nav nav-pills nav-stacked nav-list">
+                    <li  v-for="item in treeData" class="item divider homeNavLi" >
+                        <a class="homeNavLiA" @click="toggle(item.title,$event)">{{item.title}} <span class="navImg">{{ open===item.title ? '' : '  》' }}</span></a>
+
+                        <ul v-show="open===item.title"class="nav nav-pills nav-stacked homeNavChild">
+                            <item
+                                    class="item"
+                                    v-for="(model,index) in item.children"
+                                    :key="index"
+                                    :model="model">
+                            </item>
+                        </ul>
+                    </li>
                 </ul>
+
+
+
+
+
+
             </div>
+
+
             <div class="col-md-9 homeContent">
                 <iframe src="/luer/jsp/indexContent.jsp" ></iframe>
             </div>
         </div>
     </div>
 </body>
+
+
+<script type="text/x-template" id="item-template">
+    <li @click="selectNav(model.isSelect,$event)" :data-url="model.url">
+           <a :class='model.isSelect? "homeNavK active":"homeNavK" '> {{ model.title }}</a>
+    </li>
+</script>
 <script src="<%=path%>/js/index/homepage.js" type="text/javascript"></script>
 </html>
