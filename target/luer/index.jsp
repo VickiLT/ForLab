@@ -54,15 +54,7 @@
                         </ul>
                     </li>
                 </ul>
-
-
-
-
-
-
             </div>
-
-
             <div class="col-md-9 homeContent">
                 <iframe src="/luer/jsp/indexContent.jsp" ></iframe>
             </div>

@@ -2,33 +2,6 @@
  * Created by luer on 2018-3-17-0017.
  */
 $(function() {
-    /*var homepageNavt= new Vue({
-        el: '#homepageNav',
-        data: {
-            isSelect: '主页',
-            item1: [
-                {title: '主页', url: '/luer/jsp/indexContent.jsp'},
-                {title: '机房巡检', url: '/luer/jsp/labInspect/labInspect.jsp'},
-                {title: '巡检方案管理', url: '/luer/jsp/InspectManage/inspectManage.jsp'},
-                {title: '巡检信息管理', url: '/luer/jsp/infoProcess/InfoProcess.jsp'},
-                {title: '报表统计管理', url: '/luer/jsp/reportForm/reportForm.jsp'},
-                {title: '电子地图', url: '/luer/jsp/electMap11.jsp'}
-
-            ]
-        },
-        methods:{
-            selectNav: function(title,event){
-                this.isSelect=title;
-                var selectedNav=event.currentTarget;
-                var ContenSrc=selectedNav.getAttribute("data-url");
-                var iframeS="<iframe src="+ContenSrc+" ></iframe>";
-                $("iframe").remove();
-                $(".homeContent").append(iframeS);
-            }
-        }
-    });*/
-
-
     var homeNavData=[
             {
                 title: '机房巡检',
