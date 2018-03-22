@@ -46,7 +46,7 @@
 
                         <ul v-show="open===item.title"class="nav nav-pills nav-stacked homeNavChild">
                             <item
-                                    class="item"
+                                    class="item homeNavCLi"
                                     v-for="(model,index) in item.children"
                                     :key="index"
                                     :model="model">
@@ -64,8 +64,8 @@
 
 
 <script type="text/x-template" id="item-template">
-    <li @click="selectNav(model.isSelect,$event)" :data-url="model.url">
-           <a :class='model.isSelect? "homeNavK active":"homeNavK" '> {{ model.title }}</a>
+    <li @click="selectNav($event)" :data-url="model.url">
+           <a> {{ model.title }}</a>
     </li>
 </script>
 <script src="<%=path%>/js/index/homepage.js" type="text/javascript"></script>
