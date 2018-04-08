@@ -1,6 +1,7 @@
 /**
  * Created by luer on 2018-3-17-0017.
  */
+var demo;
 $(function() {
     var homeNavData=[
             {
@@ -35,7 +36,7 @@ $(function() {
                 title: '报表统计管理',
                 children: [
                     {title: '巡检报表#', url: '/luer/jsp/reportForm/inspectRep.jsp'},
-                    {title: '故障统计', url: '/luer/jsp/labInspect/labInspect.jsp'},
+                    {title: '故障统计', url: '/luer/jsp/reportForm/errorRateForm.jsp'},
                     {title: '网络可用性', url: '/luer/jsp/InspectManage/inspectManage.jsp'},
                     {title: '自定义报表', url: '/luer/jsp/infoProcess/InfoProcess.jsp'}
                 ]
@@ -59,17 +60,10 @@ $(function() {
             }
         },
         methods: {
-            selectNav: function(event){
+            selectNav: function(title,event){
+                if(demo.selectedNav==title) return ;
+                demo.selectedNav=title;
                 var selectedNav=event.currentTarget;
-                if($(selectedNav).hasClass("active")){
-                    return;
-                }
-                var homeNavKs=$(".homeNavCLi");
-                for(var i=0;i<homeNavKs.length;i++){
-                    $(homeNavKs[i]).removeClass("active")
-                }
-
-                $(selectedNav).addClass("active");
                 var ContenSrc=selectedNav.getAttribute("data-url");
                 var iframeS="<iframe src="+ContenSrc+" ></iframe>";
                 $("iframe").remove();
@@ -78,11 +72,12 @@ $(function() {
         }
     });
     // boot up the demo
-    var demo = new Vue({
+    demo = new Vue({
         el: '#homepageNav',
         data: {
             treeData: homeNavData,
             open:"主页",
+            selectedNav:"主页"
         },
         methods:{
             toggle: function (title,event) {

@@ -34,3 +34,8 @@ a{
     margin-right:10px;
     float:right;
 }
+iframe{
+    width:100%;
+    height:100%;
+    border: none;
+}
